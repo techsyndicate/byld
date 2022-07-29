@@ -2,8 +2,9 @@ const router = require("express").Router();
 const user = require("../schemas/userSchema");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+const { forwardUser } = require("../services/auth");
 
-router.get("/register", async (req, res) => {
+router.get("/register", forwardUser, async (req, res) => {
   res.render("register");
 });
 
@@ -46,7 +47,7 @@ router.post("/auth/register", async (req, res) => {
   }
 });
 
-router.get("/login", (req, res) => {
+router.get("/login", forwardUser, (req, res) => {
   res.render("login");
 });
 
@@ -81,6 +82,12 @@ router.post("/auth/login", (req, res) => {
       console.log(err);
       res.render("error");
     });
+});
+// TODO: CHANGE WHEN USERPROFILE PAGE IS MADE
+router.get("/logout", async (req, res) => {
+  res.clearCookie("token");
+  req.user = null;
+  return res.redirect("/login");
 });
 
 module.exports = router;

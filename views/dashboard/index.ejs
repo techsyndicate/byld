@@ -1,1 +1,11 @@
 <h1>Dashboard</h1>
+
+<h2>Existing Models</h2>
+<% for( let i = 0; i < templates.length; i++ ) { %>
+
+<div style="border: 2px black solid;">
+    <%= templates[i].name %>
+    <%= templates[i].description %>
+</div> <br>
+<% } %>
+</h1>
