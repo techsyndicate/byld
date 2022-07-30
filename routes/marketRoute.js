@@ -132,4 +132,50 @@ router.post("/pref/q1", checkUser, async (req, res) => {
       });
     });
 });
+
+router.get("/pref/2", checkUser, async (req, res) => {
+  res.render("market/pref/2");
+});
+
+router.post("/pref/q2", checkUser, async (req, res) => {
+  try {
+    const prompt = req.body.prompt;
+    const userId = req.user["_id"];
+    const savedUser = await user.findById(userId);
+    await user.findByIdAndUpdate(userId, {
+      $push: { preferences: prompt },
+    });
+    return res.status(200).json({
+      msg: "Preferences Updated Successfully",
+    });
+  } catch (e) {
+    console.log(e);
+    return res.status(400).json({
+      msg: "Some Error Occurred",
+    });
+  }
+});
+
+router.get("/pref/3", checkUser, async (req, res) => {
+  res.render("market/pref/3");
+});
+
+router.post("/pref/q3", checkUser, async (req, res) => {
+  try {
+    const prompt = req.body.prompt;
+    const userId = req.user["_id"];
+    const savedUser = await user.findById(userId);
+    await user.findByIdAndUpdate(userId, {
+      $push: { preferences: prompt },
+    });
+    return res.status(200).json({
+      msg: "Preferences Updated Successfully",
+    });
+  } catch (e) {
+    console.log(e);
+    return res.status(400).json({
+      msg: "Some Error Occurred",
+    });
+  }
+});
 module.exports = router;
