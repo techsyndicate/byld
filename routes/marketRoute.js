@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { checkUser } = require("../middleware/auth");
 const template = require("../schemas/templateSchema");
 const user = require("../schemas/userSchema");
+const axios = require("axios");
 
 router.get("/", checkUser, (req, res) => {
   console.log(req.user);
@@ -36,7 +37,7 @@ router.post("/buy", checkUser, async (req, res) => {
       credits: 30,
     });
     await newTemplate.save();
-
+    res.cookie("modelId", newTemplate._id);
     return res.status(200).send({
       msg: "Model purchased",
     });
@@ -66,10 +67,69 @@ router.post("/credit", checkUser, async (req, res) => {
     });
   }
 });
+router.get("/pref/1", checkUser, async (req, res) => {
+  res.render("market/pref/1");
+});
 
-router.post("q1", checkUser, async (req, res) => {
+router.post("/pref/q1", checkUser, async (req, res) => {
+  console.log("hello");
   const prompt = req.body.prompt;
   const userId = req.user["_id"];
   const savedUser = await user.findById(userId);
+  let data = JSON.stringify({
+    kind: "KeyPhraseExtraction",
+    parameters: {
+      modelVersion: "latest",
+    },
+    analysisInput: {
+      documents: [
+        {
+          id: "1",
+          language: "en",
+          text: prompt,
+        },
+      ],
+    },
+  });
+
+  let config = {
+    method: "post",
+    url: process.env.AZURE_ENDPOINT,
+    headers: {
+      "Content-Type": "application/json",
+      "Ocp-Apim-Subscription-Key": process.env.AZURE_KEY,
+    },
+    data: data,
+  };
+  axios(config)
+    .then(async (response) => {
+      try {
+        for (
+          let i = 0;
+          i < response.data.results.documents[0]["keyPhrases"].length;
+          i++
+        ) {
+          const newUser = await user.findByIdAndUpdate(userId, {
+            $push: {
+              preferences: response.data.results.documents[0]["keyPhrases"][i],
+            },
+          });
+        }
+        return res.status(200).json({
+          msg: "Preferences Updated",
+        });
+      } catch (e) {
+        console.log(e);
+        return res.status(400).json({
+          msg: "Some Error Occurred",
+        });
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      return res.status(400).json({
+        msg: "Some Error Occurred",
+      });
+    });
 });
 module.exports = router;
