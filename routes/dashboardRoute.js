@@ -4,7 +4,7 @@ const template = require("../schemas/templateSchema");
 const { checkUser } = require("../middleware/auth");
 
 router.get("/", checkUser, async (req, res) => {
-  const templates = await template.find();
+  const templates = await template.find({ userId: req.user["_id"] });
   res.render("dashboard/index", { templates });
 });
 

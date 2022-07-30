@@ -36,8 +36,8 @@ router.post("/auth/register", async (req, res) => {
     const token = jwt.sign({ id: savedUser._id }, process.env.JWT_TOKEN);
     res.cookie("token", token, {
       httpOnly: true,
-      maxAge: 1000 * 60 * 60 * 24 * 365,
     });
+
     return res.status(200).json({
       msg: "User Created. Redirecting to Dashboard",
     });

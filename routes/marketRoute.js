@@ -66,4 +66,10 @@ router.post("/credit", checkUser, async (req, res) => {
     });
   }
 });
+
+router.post("q1", checkUser, async (req, res) => {
+  const prompt = req.body.prompt;
+  const userId = req.user["_id"];
+  const savedUser = await user.findById(userId);
+});
 module.exports = router;

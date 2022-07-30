@@ -25,15 +25,15 @@ regBtn.addEventListener("click", (e) => {
   })
     .then((res) => res.json())
     .then((data) => {
-      if (res.status === 400) {
+      if (data.status === 400) {
         notyf.error(data.message);
       }
       {
         setTimeout(() => {
           notyf.success(data.message);
         }, 3000);
+        console.log("user created");
         window.location.href = "/dashboard";
       }
-    })
-    .catch((err) => {});
+    });
 });
