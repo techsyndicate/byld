@@ -1,0 +1,33 @@
+:root{
+    --color-1: #181A2D;
+    --color-2: #3A404F;
+    --color-3: #430FCA;
+    --color-4: #E8D5FF;
+    --color-5: #FFFFFF;
+}
+@font-face{
+    font-family: 'Regular';
+    src: url('../assets/fonts/THICCCBOI-Regular.ttf');
+}
+@font-face{
+    font-family: 'Bold';
+    src: url('../assets/fonts/THICCCBOI-Bold.ttf');
+}
+@font-face {
+    font-family: 'Medium';
+    src: url('../assets/fonts/THICCCBOI-Medium.ttf');
+}
+@font-face {
+    font-family: 'Light';
+    src: url('../assets/fonts/THICCCBOI-Light.ttf');
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    font-family: 'Regular', sans-serif;
+    width: 100%;
+}
