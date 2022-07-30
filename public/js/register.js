@@ -9,7 +9,7 @@ regBtn.addEventListener("click", (e) => {
   const username = document.querySelector("#username").value;
   const password = document.querySelector("#password").value;
   const password2 = document.querySelector("#password").value;
-  console.log(email);
+
   fetch("/auth/register", {
     method: "POST",
     headers: {

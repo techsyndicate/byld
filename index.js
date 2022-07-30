@@ -16,12 +16,14 @@ app.use(expressLayouts);
 app.use(express.json());
 app.set("views", path.join(__dirname, "views"));
 
-const indexRouter = require("./routes/indexRoute");
-const authRouter = require("./routes/authRoute");
-const dashboardRouter = require("./routes/dashboardRoute");
+const indexRouter = require("./routes/indexRoute"),
+  authRouter = require("./routes/authRoute"),
+  dashboardRouter = require("./routes/dashboardRoute"),
+  marketRouter = require("./routes/marketRoute");
 app.use(indexRouter);
 app.use(authRouter);
 app.use("/dashboard", dashboardRouter);
+app.use("/market", marketRouter);
 
 const PORT = process.env.PORT || 3000;
 const link = `mongodb+srv://techsyndicate2:${process.env.MONGO_PASS}@cluster0.dc5krnu.mongodb.net/?retryWrites=true&w=majority`;

@@ -23,7 +23,6 @@ module.exports = {
     }
   },
   forwardUser: async (req, res, next) => {
-    console.log("user forwading");
     const token = req.cookies.token;
     if (!token) {
       return next();

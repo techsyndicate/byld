@@ -8,6 +8,14 @@ const userSchema = new Schema(
     email: reqString,
     username: reqString,
     password: reqString,
+    credits: {
+      type: Number,
+      required: true,
+    },
+    preferences: {
+      type: Array,
+      required: true,
+    },
   },
   { timestamps: true }
 );

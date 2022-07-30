@@ -2,7 +2,7 @@ const router = require("express").Router();
 const user = require("../schemas/userSchema");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const { forwardUser } = require("../services/auth");
+const { forwardUser } = require("../middleware/auth");
 
 router.get("/register", forwardUser, async (req, res) => {
   res.render("register");

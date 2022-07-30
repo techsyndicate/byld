@@ -5,8 +5,14 @@ const reqString = { type: String, required: true };
 const templateSchema = new Schema(
   {
     name: reqString,
-    model: reqString,
-    description: reqString,
+    model: {
+      type: String,
+      required: false,
+    },
+    description: {
+      type: String,
+      required: false,
+    },
     preferences: {
       type: Array,
       required: false,
@@ -14,9 +20,10 @@ const templateSchema = new Schema(
     },
     credits: {
       type: Number,
-      required: true,
+      required: false,
       default: 30,
     },
+    userId: reqString,
   },
   { timestamps: true }
 );
