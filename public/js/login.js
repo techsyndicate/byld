@@ -23,8 +23,5 @@ logBtn.addEventListener("click", (e) => {
         }, 3000);
         window.location.href = "/dashboard";
       }
-    })
-    .catch((err) => {
-      console.log(err);
     });
 });

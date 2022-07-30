@@ -23,7 +23,7 @@ buyBtn.addEventListener("click", (e) => {
         setTimeout(() => {
           notyf.success(data.message);
         }, 3000);
-        window.location.href = "/dashboard";
+        window.location.href = "/market/pref/1";
       }
     });
 });

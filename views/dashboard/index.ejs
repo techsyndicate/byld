@@ -1,21 +1,24 @@
-<h1>Dashboard</h1>
+<div class="dashboard-div">
+    <h1>Dashboard</h1>
 
-<h2>Existing Models</h2>
-<% for( let i = 0; i < templates.length; i++ ) { %>
+    <h2>Existing Models</h2>
+    <% for( let i = 0; i < templates.length; i++ ) { %>
 
-<div style="border: 2px black solid;">
-    <%= templates[i].name %>
-    <%= templates[i].description %>
-</div> <br>
-<% } %>
+    <div style="border: 2px black solid;">
+        <%= templates[i].name %>
+        <%= templates[i].description %>
+    </div> <br>
+    <% } %>
 
-<h2>Create New Model</h2>
-<form id="modelForm">
-    <input name="name" id="name" placeholder="Model Name" /> <br> <br>
-    <input name="description" id="description" placeholder="Model Description" /> <br> <br>
-    <button type="submit" id="modelBtn">Make a Model</button>
-</form>
-</h1>
-<h2><a href='/market'>Market Place</a></h2>
+    <h2>Create New Model</h2>
+    <form id="modelForm">
+        <input name="name" id="name" placeholder="Model Name" /> <br> <br>
+        <input name="description" id="description" placeholder="Model Description" /> <br> <br>
+        <button type="submit" id="modelBtn">Make a Model</button>
+    </form>
+    </h1>
+    <h2><a href='/market'>Market Place</a></h2>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
 <script src="/js/dashboard.js"></script>
