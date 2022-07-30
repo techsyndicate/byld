@@ -31,14 +31,42 @@ body{
     font-family: 'Regular', sans-serif;
     width: 100%;
 }
-.dashboard-div{
+.dashboard-div,.market-div,.pref-1{
     background: var(--color-1);
     height : 100vh;
     color: var(--color-5);
 }
-h1,h2{
+h1{
     font-family: 'Bold', sans-serif;
 }
-h3,h4{
+h3,h2{
     font-family: 'Medium', sans-serif;
+}
+.pref-1 h1{
+    margin-left: 6.5vw;
+    color: var(--color-4);
+    padding-top: 7.5vw;
+    font-size: 2.7vw;
+}
+.pref-1-main{
+    display:flex;
+}
+.pref-1-main form textarea{
+    height: 5vw;
+    width: 20vw;
+    background: #1B1D33;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: var(--color-5);
+    font-family: 'Regular', sans-serif;
+}
+.pref-1-main form textarea::placeholder{
+    color: var(--color-5);
+}
+.pref-1-main form textarea:focus{
+    outline: none;
+}
+.pref-1-main form{
+    margin-top: 2vw;
 }
