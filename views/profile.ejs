@@ -1,0 +1,14 @@
+<h1>User Profile</h1>
+<h2>Your Profile</h2>
+<p>
+    <%= user.name %> <br>
+    <%= user.email %> <br>
+    <%= user.credits %> Credits <br>
+    <h2>Buy Credits</h2>
+    <form action="creditForm">
+        <input name="credits" id="credits" type="number" required placeholder="Credits"> <br><br>
+        <button id="creditBtn">Buy Credits</button>
+    </form>
+</p>
+<script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+<script src="/js/profile.js"></script>

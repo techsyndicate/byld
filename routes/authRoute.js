@@ -2,7 +2,7 @@ const router = require("express").Router();
 const user = require("../schemas/userSchema");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const { forwardUser } = require("../middleware/auth");
+const { forwardUser, checkUser } = require("../middleware/auth");
 
 router.get("/register", forwardUser, async (req, res) => {
   res.render("register");
@@ -88,6 +88,11 @@ router.get("/logout", async (req, res) => {
   res.clearCookie("token");
   req.user = null;
   return res.redirect("/login");
+});
+
+router.get("/profile", checkUser, async (req, res) => {
+  const user = req.user;
+  res.render("profile", { user });
 });
 
 module.exports = router;

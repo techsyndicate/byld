@@ -47,4 +47,23 @@ router.post("/buy", checkUser, async (req, res) => {
     });
   }
 });
+
+router.post("/credit", checkUser, async (req, res) => {
+  try {
+    const credit = req.body.credit;
+    const userId = req.user["_id"];
+    const savedUser = await user.findByIdAndUpdate(userId, {
+      $inc: { credits: credit },
+    });
+    await savedUser.save();
+    return res.status(200).json({
+      msg: "Credits Successfully Update",
+    });
+  } catch (e) {
+    console.log(e);
+    return res.status(400).json({
+      msg: "Some Error Occurred",
+    });
+  }
+});
 module.exports = router;
