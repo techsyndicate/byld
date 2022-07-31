@@ -188,4 +188,28 @@ router.get("/pref/end", checkUser, async (req, res, next) => {
   console.log(recommendedModel);
   res.render("market/pref/end", { recommendedModel });
 });
+router.post("/model/buy", checkUser, async (req, res, next) => {
+  try {
+    const { link, name, credits } = req.body;
+    const userId = req.user["_id"];
+    let modelId = req.cookies.modelId;
+    const newUser = await user.findByIdAndUpdate(userId, {
+      $inc: { credits: -credits },
+    });
+    const newModel = await template.findByIdAndUpdate(modelId, {
+      $set: { model: link, description: name },
+    });
+    return res.status(200).json({
+      msg: "Model Purchased",
+    });
+  } catch (e) {
+    console.log(e);
+    return res.status(400).json({
+      msg: "Some Error Occurred",
+    });
+  }
+});
+router.get("/finish", checkUser, async (req, res) => {
+  res.render("market/finish");
+});
 module.exports = router;

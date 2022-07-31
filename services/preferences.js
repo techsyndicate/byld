@@ -35,13 +35,17 @@ module.exports = {
       if (preferences[i].includes("modern")) {
         pref += 3;
       }
+      if (preferences[i].includes("large")) {
+        pref += 3;
+      }
     }
     console.log(pref);
     if (pref < 3) {
       const modelId = req.cookies.modelId;
+
       let modelLink =
         "https://drive.google.com/file/d/1R6ypLV0LcQln-8nDV-XXqJYJo7QQaXYh/view?usp=sharing";
-      let modelName = "";
+      let modelName = "Old is Gold";
       const model = await template.findByIdAndUpdate(modelId, {
         $set: { model: modelLink },
         $inc: { credits: 30 },
@@ -54,7 +58,7 @@ module.exports = {
       const modelId = req.cookies.modelId;
       let modelLink =
         "https://drive.google.com/file/d/1SL3tvIJpAj69qrG91V0HXfo4bH2puSh2/view?usp=sharing";
-      let modelName = "";
+      let modelName = "Blast from the West";
       const model = await template.findByIdAndUpdate(modelId, {
         $set: { model: modelLink },
         $inc: { credits: 40 },
@@ -64,7 +68,7 @@ module.exports = {
       }
       return { modelLink, modelName, model, credits: model.credits };
     } else if (pref > 4 && pref <= 6) {
-      let modelName = "";
+      let modelName = "White Picket Fence House";
       const modelId = req.cookies.modelId;
       let modelLink =
         "https://drive.google.com/file/d/1aX8J8bVTmqXIXJTfaj8BCWNEjl5KYKgc/view?usp=sharing";
@@ -77,7 +81,7 @@ module.exports = {
       }
       return { modelLink, modelName, model, credits: model.credits };
     } else if (pref > 6) {
-      let modelName = "";
+      let modelName = "2050 House";
       const modelId = req.cookies.modelId;
       let modelLink =
         "https://drive.google.com/file/d/15eMiCNO982Osvyo2QVwHI8HE654keq7u/view?usp=sharing";

@@ -1,1 +1,13 @@
 <h1>Recommendation</h1>
+Model: <%= recommendedModel["modelName"] %> <br><br>
+2D Image: <a href="<%= recommendedModel["modelLink"] %>">Here</a> <br><br>
+Cost: <%= recommendedModel["credits"] %> Credits <br><br>
+<form id="modelBuyForm">
+
+    <input type="hidden" name="modelName" value="<%= recommendedModel.modelName %>" id="name">
+    <input type="hidden" name="modelLink" value="<%= recommendedModel.modelLink %>" id="link">
+    <input type="hidden" name="credits" value="<%= recommendedModel.credits %>" id="credits">
+    <button id="modelBuyBtn">Buy</button>
+</form>
+<script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+<script src="/js/model.js"></script>
