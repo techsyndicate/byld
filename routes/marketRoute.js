@@ -178,4 +178,8 @@ router.post("/pref/q3", checkUser, async (req, res) => {
     });
   }
 });
+
+router.get("/pref/end", checkUser, async (req, res) => {
+  res.render("market/pref/end");
+});
 module.exports = router;
