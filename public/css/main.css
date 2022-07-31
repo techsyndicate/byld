@@ -30,6 +30,8 @@
 body{
     font-family: 'Regular', sans-serif;
     width: 100%;
+    color: var(--color-5);
+    background: #181A2D;
 }
 .dashboard-div,.market-div,.pref-1,.pref-2,.pref-3{
     background: var(--color-1);
@@ -89,7 +91,9 @@ h3,h2{
     letter-spacing: 1.25px;
 }
 .illus{
-    background: #1B1D33;
+    background: url('/assets/image/house-illus.svg');
+    background-size: cover;
+    background-position: center;
     width: 30vw;
     height: 35vw;
     margin-left: 2.5vw;
@@ -227,8 +231,8 @@ h3,h2{
     border-radius: 10px;
 }
 .house img{
-    transform: scale(0.65);
-    margin: -5vw -5vw;
+    transform: scale(0.5);
+    margin: -5vw -6vw;
 }
 .selection input[type=radio]{
     position: absolute;
@@ -268,4 +272,192 @@ h3,h2{
 }
 .dash-head{
     display: flex;
+}
+.project-div{
+    width: 57vw;
+    height: 32.5vw;
+    background: #22243D;
+    border-radius: 10px;
+    margin-left: 5vw;
+}
+.dash-content{
+    display:flex;
+}
+.profile-div{
+    height: 32.5vw;
+    width: 25vw;
+    background-color: #22243D;
+    border-radius: 10px;
+    margin-left: 5vw;
+}
+.header{
+    width: 100%;
+    height: 7.5vw;
+    background: #2A2D48;
+    border-radius: 10px;
+}
+.projects{
+    width: 100%;
+    height: 25vw;
+}
+.header h3{
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 1.45vw;
+    letter-spacing: 1.5px;
+    padding: 3vw 3vw;
+}
+.header img{
+    position: absolute;
+    margin-top: -4.25vw;
+    margin-left: 22.5vw;
+}
+.projects h2{
+    color: rgba(232, 213, 255, 0.4);
+    margin: 2.5vw 3.5vw;
+}
+.projects{
+    display: flex;
+    margin-left: 2vw;
+}
+.project{
+    margin-right: 2.5vw;
+    width: 25vw;
+}
+.projects .project h2{
+    color: #8684FF;
+    letter-spacing: 1px;
+    margin-left: 0vw;
+}
+.projects .project button{
+    padding: 10px;
+    border-radius: 10px;
+    background: transparent;
+    border: 2px solid #8684FF;
+    font-size: 1.2vw;
+    color: #8684FF;
+    letter-spacing: 1.2px;
+    position: absolute;
+    font-family: 'Bold', sans-serif;
+    margin: -5vw 15vw;
+}
+.project-blob{
+    width: 22.5vw;
+    height: 10vw;
+    background:  linear-gradient(136.87deg, #4E11EC 0%, #FFFFFF 170.9%);
+    border-radius: 10px;
+    margin-top: 7.5vw;
+}
+.project img{
+    transform: scale(0.25);
+    position: absolute;
+    margin-left: -27.5vw;
+    margin-top: -30vw;
+}
+.profile-div .circle{
+    width: 12.5vw;
+    height: 12.5vw;
+    border-radius: 100%;
+    background: linear-gradient(136.87deg, #4E11EC 0%, #FFFFFF 170.9%);
+    margin: 2.5vw auto;
+}
+.profile-div .name{
+    font-size: 2.5vw;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.profile-div .cred{
+    color: #8684FF;
+    text-align: center;
+    font-size: 1.25vw;
+}
+.landing-header{
+    background: url('/assets/image/background.png');
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+.landing-navbar,.logo-desc{
+    display: flex;
+}
+.landing-navbar{
+    padding: 3.5vw;
+}
+.logo-desc h2{
+    font-size: 2.5vw;
+    margin-top: 1vw;
+    margin-left: 2.5vw;
+}
+.landing-navbar ul {
+    list-style: none;
+    display: flex;
+    width: 25vw;
+    position: absolute;
+    margin: 2vw 70vw;
+}
+.landing-navbar ul li{
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    font-weight: 500;
+}
+.landing-navbar ul li a{
+    color: #eee;
+    text-decoration: none;
+    font-size: 1.5vw;
+}
+
+.landing-div h1{
+    font-size: 3.5vw;
+    margin-top : 1.25vw;
+    text-align: center;
+}
+#span1{
+    background: linear-gradient(93.78deg, #FFFFFF 25.24%, rgba(255, 255, 255, 0) 99.06%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#span2{
+    background: linear-gradient(136.87deg, #4E11EC 0%, #FFFFFF 170.9%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.stats{
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
+    margin: 1.5vw auto;
+}
+.stat{
+    text-align: center;
+}
+.stats .stat h2{
+    font-size: 2.5vw;
+    margin-top: 1vw;
+    letter-spacing: 1px;
+}
+.stat p {
+    margin-top: 1vw;
+}
+.line-stat{
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    margin: 3vw 8.5vw;
+    background: linear-gradient(90deg, #4E11EC -2.29%, rgba(232, 213, 255, 0.4) 154.58%);
+    border-radius: 11px;
+    transform: rotate(90deg);
+}
+.landing-header img{
+    transform: scale(0.75);
+    display: block;
+    margin: -2.5vw auto;
+}
+.marketplace-div h1{
+    color: #E8D5FF;
+    font-size: 2.5vw;
+    margin-left: 6.5vw;
+    margin-top: 5vw;
+}
+.marketplace-div img{
+    position: absolute;
+    margin: 2.5vw 72.5%;
 }

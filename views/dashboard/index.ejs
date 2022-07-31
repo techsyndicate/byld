@@ -1,6 +1,6 @@
 <div class="dashboard-div">
     <div class="dash-head">
-        <h1>Welcome back, <%= user.name %></h1>
+        <h1>Welcome back, <%= user.username %></h1>
         <div class="navbar">
             <ul>
                 <li>
@@ -15,18 +15,59 @@
             </ul>
         </div>
     </div>
-   
-    <div class="project-div"></div>
-    <div class="profile-div"></div>
+    <script>
+        //32,65
+    </script>
+    <div class="dash-content">
+        <div class="project-div">
+            <div class="header">
+                <h3>Continue where you left</h3>
+                <img src="/assets/image/arrow2.svg">
+            </div>
+            <div class="projects">
+                <% if (templates.length == 0) { %>
+                <h2>
+                    No houses built yet :(
+                </h2>
+                <%} else{ %>
+                    <% for( let i = 0; i < templates.length; i++ ) { %>
+                        <div class="project">
+                            <h2>
+                                Project <span style="color: rgba(255, 255, 255, 0.568);"><%= templates[i].name %></span>
+                            </h2>
+                            <button>
+                                Continue
+                            </button>
+                            <img src="">
+                            <div class="project-blob"></div>
+                        </div>
+                    <% } %>
+                    
+                <% } %>
+            </div>
+        </div>
+        <div class="profile-div">
+            <div class="header">
+                <h3>Profile</h3>
+                <img  style="margin-left: 10vw;" src="/assets/image/arrow2.svg">
+                <div class="circle"></div>
+                <div class="prof">
+                    <p class="name">
+                        <%= user.name %>
+                    </p>
+                    <p class="cred">
+                        <%= user.credits %> <span>credits</span>
+                    </p>
+                </div>
+
+                
+
+            </div>
+        </div>
+    </div>
+    
     <h2>Existing Models</h2>
-    <% for( let i = 0; i < templates.length; i++ ) { %>
-
-    <div style="border: 2px black solid;">
-        <%= templates[i].name %>
-        <%= templates[i].description %>
-    </div> <br>
-    <% } %>
-
+    
     
     <h2><a href='/market'>Market Place</a></h2>
 </div>
