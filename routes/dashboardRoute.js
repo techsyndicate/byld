@@ -5,7 +5,8 @@ const { checkUser } = require("../middleware/auth");
 
 router.get("/", checkUser, async (req, res) => {
   const templates = await template.find({ userId: req.user["_id"] });
-  res.render("dashboard/index", { templates,user:req.user });
+  console.log(templates);
+  res.render("dashboard/index", { templates, user: req.user });
 });
 
 // Model Section
@@ -25,11 +26,11 @@ router.post("/model/new", async (req, res) => {
 router.get("/dashboard/model/pref/1", checkUser, async (req, res) => {
   res.render("model/pref/1");
 });
-router.get('/model',checkUser,async(req,res)=>{
+router.get("/model", checkUser, async (req, res) => {
   const templates = await template.find({ userId: req.user["_id"] });
-  res.render('dashboard/model',{
+  res.render("dashboard/model", {
     templates,
-    user:req.user
-  })
-})
+    user: req.user,
+  });
+});
 module.exports = router;

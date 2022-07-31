@@ -38,11 +38,14 @@ module.exports = {
       if (preferences[i].includes("large")) {
         pref += 3;
       }
+      if (preferences[i].includes("traditional")) {
+        pref += 1;
+      }
     }
     console.log(pref);
     if (pref < 3) {
       const modelId = req.cookies.modelId;
-
+      console.log("model 1");
       let modelLink =
         "https://drive.google.com/file/d/1R6ypLV0LcQln-8nDV-XXqJYJo7QQaXYh/view?usp=sharing";
       let modelName = "Old is Gold";
@@ -54,8 +57,9 @@ module.exports = {
         res.render("market/nocredits");
       }
       return { modelLink, modelName, model, credits: model.credits };
-    } else if (pref > 3 && pref <= 4) {
+    } else if (pref >= 3 && pref <= 4) {
       const modelId = req.cookies.modelId;
+      console.log("model 2");
       let modelLink =
         "https://drive.google.com/file/d/1SL3tvIJpAj69qrG91V0HXfo4bH2puSh2/view?usp=sharing";
       let modelName = "Blast from the West";

@@ -30,28 +30,28 @@
                     No houses built yet :(
                 </h2>
                 <%} else{ %>
-                    <% for( let i = 0; i < 2; i++ ) { %>
-                        <div class="project">
-                            <h2>
-                                Project <span style="color: rgba(255, 255, 255, 0.568);"><%= templates[i].name %></span>
-                            </h2>
-                            <button>
-                                Continue
-                            </button>
-                            <img src="https://drive.google.com/uc?id=<%= templates.model.slice(32,65)%>">
-                            <div class="project-blob"></div>
-                        </div>
-                    <% } %>
-                    <a class="check" href="/dashboard/model">
-                        Checkout your models
-                    </a>                    
+                <% for( let i = 0; i < 2; i++ ) { %>
+                <div class="project">
+                    <h2>
+                        Project <span style="color: rgba(255, 255, 255, 0.568);"><%= templates[i].name %></span>
+                    </h2>
+                    <button>
+                        Continue
+                    </button>
+                    <img src="https://drive.google.com/uc?id=<%= templates[i]['model'].slice(32,65)%>">
+                    <div class="project-blob"></div>
+                </div>
+                <% } %>
+                <a class="check" href="/dashboard/model">
+                    Checkout your models
+                </a>
                 <% } %>
             </div>
         </div>
         <div class="profile-div">
             <div class="header">
                 <h3>Profile</h3>
-                <img  style="margin-left: 10vw;" src="/assets/image/arrow2.svg">
+                <img style="margin-left: 10vw;" src="/assets/image/arrow2.svg">
                 <div class="circle"></div>
                 <div class="prof">
                     <p class="name">
@@ -62,7 +62,7 @@
                     </p>
                 </div>
 
-                
+
 
             </div>
         </div>
