@@ -59,6 +59,7 @@ body{
     padding: 10px;
     border-radius: 5px;
     margin-top: .5vw;
+    font-size: 1.2vw;
 }
 .login-div input:focus, .register-div input:focus{
     outline: none;
@@ -482,6 +483,7 @@ h3,h2{
 }
 .stat{
     text-align: center;
+    margin-left: 2.5vw;
 }
 .stats .stat h2{
     font-size: 2.5vw;
@@ -495,7 +497,7 @@ h3,h2{
     position: absolute;
     width: 60px;
     height: 3px;
-    margin: 3vw 8.5vw;
+    margin: 3vw 10vw;
     background: linear-gradient(90deg, #4E11EC -2.29%, rgba(232, 213, 255, 0.4) 154.58%);
     border-radius: 11px;
     transform: rotate(90deg);
