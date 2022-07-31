@@ -3,40 +3,80 @@ const template = require("../models/template");
 
 module.exports = {
   recommendModel: async (req, res, next) => {
+    console.log(req.user);
     const userId = req.user["_id"];
+
     const savedUser = await user.findById(userId);
     let preferences = savedUser["preferences"];
     let budget = preferences[-1];
     let size = preferences[-2];
     let pref = 0;
-    console.log(budget);
-    console.log(size);
+    console.log("Preferences ", preferences);
     for (let i = 0; i < preferences.length - 2; i++) {
       if (preferences[i].includes("old")) {
         pref += 1;
-      } else if (preferences[i].includes("small")) {
+      }
+      if (preferences[i].includes("small")) {
         pref += 1;
-      } else if (preferences[i].includes("simple")) {
+      }
+      if (preferences[i].includes("simple")) {
         pref += 1;
-      } else if (preferences[i].includes("big")) {
+      }
+      if (preferences[i].includes("big")) {
         pref += 3;
-      } else if (preferences[i].includes("modern")) {
+      }
+      if (preferences[i].includes("modern")) {
+        console.log("modern");
         pref += 3.5;
-      } else if (preferences[i].includes("suburban")) {
+      }
+      if (preferences[i].includes("suburban")) {
         pref += 4.5;
-      } else if (preferences[i].includes("modern")) {
+      }
+      if (preferences[i].includes("modern")) {
         pref += 3;
       }
     }
     console.log(pref);
     if (pref < 3) {
-      // Model 1
+      const modelId = req.cookies.modelId;
+      let modelLink =
+        "https://drive.google.com/file/d/1R6ypLV0LcQln-8nDV-XXqJYJo7QQaXYh/view?usp=sharing";
+      let modelName = "";
+      const model = await template.findByIdAndUpdate(modelId, {
+        $set: { model: modelLink },
+        $inc: { credits: 30 },
+      });
+      return { modelLink, modelName, model, credits: model.credits };
     } else if (pref > 3 && pref <= 4) {
-      // Model 2
+      const modelId = req.cookies.modelId;
+      let modelLink =
+        "https://drive.google.com/file/d/1SL3tvIJpAj69qrG91V0HXfo4bH2puSh2/view?usp=sharing";
+      let modelName = "";
+      const model = await template.findByIdAndUpdate(modelId, {
+        $set: { model: modelLink },
+        $inc: { credits: 40 },
+      });
+      return { modelLink, modelName, model, credits: model.credits };
     } else if (pref > 4 && pref <= 6) {
-      // Model 3
+      let modelName = "";
+      const modelId = req.cookies.modelId;
+      let modelLink =
+        "https://drive.google.com/file/d/1aX8J8bVTmqXIXJTfaj8BCWNEjl5KYKgc/view?usp=sharing";
+      const model = await template.findByIdAndUpdate(modelId, {
+        $set: { model: modelLink },
+        $inc: { credits: 50 },
+      });
+      return { modelLink, modelName, model, credits: model.credits };
     } else if (pref > 6) {
-      // Model 4
+      let modelName = "";
+      const modelId = req.cookies.modelId;
+      let modelLink =
+        "https://drive.google.com/file/d/15eMiCNO982Osvyo2QVwHI8HE654keq7u/view?usp=sharing";
+      const model = await template.findByIdAndUpdate(modelId, {
+        $set: { model: modelLink },
+        $inc: { credits: 70 },
+      });
+      return { modelLink, modelName, model, credits: model.credits };
     }
   },
 };

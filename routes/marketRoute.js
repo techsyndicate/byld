@@ -3,6 +3,7 @@ const { checkUser } = require("../middleware/auth");
 const template = require("../models/template");
 const user = require("../models/user");
 const axios = require("axios");
+const { recommendModel } = require("../services/preferences");
 
 router.get("/", checkUser, (req, res) => {
   console.log(req.user);
@@ -104,6 +105,7 @@ router.post("/pref/q1", checkUser, async (req, res) => {
   axios(config)
     .then(async (response) => {
       try {
+        console.log(response.data.results.documents[0]);
         for (
           let i = 0;
           i < response.data.results.documents[0]["keyPhrases"].length;
@@ -165,6 +167,7 @@ router.post("/pref/q3", checkUser, async (req, res) => {
     const prompt = req.body.prompt;
     const userId = req.user["_id"];
     const savedUser = await user.findById(userId);
+    console.log(prompt);
     await user.findByIdAndUpdate(userId, {
       $push: { preferences: prompt },
     });
@@ -173,13 +176,16 @@ router.post("/pref/q3", checkUser, async (req, res) => {
     });
   } catch (e) {
     console.log(e);
+    console.log("error");
     return res.status(400).json({
       msg: "Some Error Occurred",
     });
   }
 });
 
-router.get("/pref/end", checkUser, async (req, res) => {
-  res.render("market/pref/end");
+router.get("/pref/end", checkUser, async (req, res, next) => {
+  const recommendedModel = await recommendModel(req, res, next);
+  console.log(recommendedModel);
+  res.render("market/pref/end", { recommendedModel });
 });
 module.exports = router;

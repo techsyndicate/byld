@@ -18,7 +18,7 @@ q2Btn.addEventListener("click", (e) => {
       if (data.status == 400) {
         notyf.error(data.msg);
       } else {
-        notyf.success(Data.msg);
+        notyf.success(data.msg);
         setTimeout(() => {
           window.location.href = "/market/pref/3";
         }, 3000);
