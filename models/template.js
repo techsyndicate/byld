@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const reqString = { type: String, required: true };
 
-const templateSchema = new Schema(
+const template = new Schema(
   {
     name: reqString,
     model: {
@@ -28,5 +28,5 @@ const templateSchema = new Schema(
   { timestamps: true }
 );
 
-const templateModel = mongoose.model("Template", templateSchema);
+const templateModel = mongoose.model("Template", template);
 module.exports = templateModel;

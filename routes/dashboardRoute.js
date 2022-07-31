@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const template = require("../schemas/templateSchema");
+const template = require("../models/template");
 const { checkUser } = require("../middleware/auth");
 
 router.get("/", checkUser, async (req, res) => {
