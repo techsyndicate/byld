@@ -200,7 +200,7 @@ h3,h2{
     border: none;
     outline: none;
     left: 85%;
-    top: 55vw;
+    top: 50vw;
     font-size: 1.75vw;
 }
 #q3Form{
@@ -305,7 +305,7 @@ h3,h2{
 }
 .project-div{
     width: 57vw;
-    height: 32.5vw;
+    height: 37.5vw;
     background: #22243D;
     border-radius: 10px;
     margin-left: 5vw;
@@ -314,7 +314,7 @@ h3,h2{
     display:flex;
 }
 .profile-div{
-    height: 32.5vw;
+    height: 37.5vw;
     width: 25vw;
     background-color: #22243D;
     border-radius: 10px;
@@ -353,12 +353,12 @@ h3,h2{
     margin-right: 2.5vw;
     width: 25vw;
 }
-.projects .project h2{
+.projects .project h2,.model h2{
     color: #8684FF;
     letter-spacing: 1px;
     margin-left: 0vw;
 }
-.projects .project button{
+.projects .project button,.model button{
     padding: 10px;
     border-radius: 10px;
     background: transparent;
@@ -369,6 +369,9 @@ h3,h2{
     position: absolute;
     font-family: 'Bold', sans-serif;
     margin: -5vw 15vw;
+}
+.model button{
+    margin-top: -2.5vw;
 }
 .project-blob{
     width: 22.5vw;
@@ -389,6 +392,9 @@ h3,h2{
     border-radius: 100%;
     background: linear-gradient(136.87deg, #4E11EC 0%, #FFFFFF 170.9%);
     margin: 2.5vw auto;
+}
+.profile-div .prof{
+    margin-top: 5vw;
 }
 .profile-div .name{
     font-size: 2.5vw;
@@ -550,4 +556,30 @@ h3,h2{
     font-size: 2vw;
     font-family: 'Regular', sans-serif;
     margin-left: 7.5vw;
+}
+.check{
+    background: linear-gradient(136.87deg, #4E11EC 0%, #FFFFFF 170.9%);
+    padding: 10px;
+    color: #eee;
+    text-decoration: none;
+    position: absolute;
+    border-radius: 10px;
+    margin-top: 25vw;
+}
+.model-display{
+    display: grid;
+    grid-template-columns: repeat(3, 15vw);
+    grid-gap: 15vw;
+}
+.model{
+    background: #1B1D33;
+    border-radius: 10px;
+    padding: 20px;
+    width: 25vw;
+}
+.model-div h1{
+    margin: 6.5vw 6.5vw;
+}
+.model-display{
+    margin-left: 6.5vw;
 }

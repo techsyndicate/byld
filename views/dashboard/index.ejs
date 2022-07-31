@@ -4,13 +4,13 @@
         <div class="navbar">
             <ul>
                 <li>
-                    <a href="#"><img src="/assets/image/home.svg"></a>
+                    <a href="/dashboard"><img src="/assets/image/home.svg"></a>
                 </li>
                 <li>
-                    <a href="#"><img src="/assets/image/market.svg"></a>
+                    <a href="/market"><img src="/assets/image/market.svg"></a>
                 </li>
                 <li>
-                    <a href="#"><img src="/assets/image/doc.svg"></a>
+                    <a href="/profile"><img src="/assets/image/doc.svg"></a>
                 </li>
             </ul>
         </div>
@@ -30,7 +30,7 @@
                     No houses built yet :(
                 </h2>
                 <%} else{ %>
-                    <% for( let i = 0; i < templates.length; i++ ) { %>
+                    <% for( let i = 0; i < 2; i++ ) { %>
                         <div class="project">
                             <h2>
                                 Project <span style="color: rgba(255, 255, 255, 0.568);"><%= templates[i].name %></span>
@@ -42,7 +42,9 @@
                             <div class="project-blob"></div>
                         </div>
                     <% } %>
-                    
+                    <a class="check" href="/dashboard/model">
+                        Checkout your models
+                    </a>                    
                 <% } %>
             </div>
         </div>
@@ -65,11 +67,6 @@
             </div>
         </div>
     </div>
-    
-    <h2>Existing Models</h2>
-    
-    
-    <h2><a href='/market'>Market Place</a></h2>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>

@@ -1,0 +1,32 @@
+<div class="model-div">
+    <h1>
+        Your models
+    </h1>
+    <div class="navbar" style="margin-top: -10vw;">
+        <ul>
+            <li>
+                <a href="/dashboard"><img src="/assets/image/home.svg"></a>
+            </li>
+            <li>
+                <a href="/market"><img src="/assets/image/market.svg"></a>
+            </li>
+            <li>
+                <a href="/profile"><img src="/assets/image/doc.svg"></a>
+            </li>
+        </ul>
+    </div>
+    <div class="model-display">
+        <% for (var i =0; i<templates.length;i++){%>
+            <div class="model">
+                <h2>
+                    Project <span style="color: rgba(255, 255, 255, 0.568);"><%= templates[i].name %></span>
+                </h2>
+                <button>
+                    Continue
+                </button>
+                <img src="">
+                <div class="project-blob"></div>
+            </div>
+        <% } %>
+    </div>
+</div>
