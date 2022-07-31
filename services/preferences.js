@@ -46,6 +46,9 @@ module.exports = {
         $set: { model: modelLink },
         $inc: { credits: 30 },
       });
+      if (savedUser.credits < 30) {
+        res.render("market/nocredits");
+      }
       return { modelLink, modelName, model, credits: model.credits };
     } else if (pref > 3 && pref <= 4) {
       const modelId = req.cookies.modelId;
@@ -56,6 +59,9 @@ module.exports = {
         $set: { model: modelLink },
         $inc: { credits: 40 },
       });
+      if (savedUser.credits < 40) {
+        res.render("market/nocredits");
+      }
       return { modelLink, modelName, model, credits: model.credits };
     } else if (pref > 4 && pref <= 6) {
       let modelName = "";
@@ -66,6 +72,9 @@ module.exports = {
         $set: { model: modelLink },
         $inc: { credits: 50 },
       });
+      if (savedUser.credits < 50) {
+        res.render("market/nocredits");
+      }
       return { modelLink, modelName, model, credits: model.credits };
     } else if (pref > 6) {
       let modelName = "";
@@ -76,6 +85,9 @@ module.exports = {
         $set: { model: modelLink },
         $inc: { credits: 70 },
       });
+      if (savedUser.credits < 70) {
+        res.render("market/nocredits");
+      }
       return { modelLink, modelName, model, credits: model.credits };
     }
   },
