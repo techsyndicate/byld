@@ -1,9 +1,90 @@
-<h2>Q3: Budget</h2>
+<div class="pref-2">
+    <h1>Give your Specifications</h1> <br>
+    <div class="pref-2-main">
+        <div class="status">
+            <div class="status-circle-1"></div>
+            <div class="status-circle-2"></div>
+            <div class="status-circle-3"></div>
+            <div class="status-line"></div>
+            <div class="status-col">
+                <div class="desc">
+                    <h3>
+                        Description
+                    </h3>
+                    <p>
+                        let us get to know<br>
+                        you more!
+                    </p>
+                </div>
+                <div class="prefer">
+                    <h3 id="l">
+                        Preference
+                    </h3>
+                    <p>
+                        We'd like to hear about<br> your preference in houses
+                    </p>
+                </div>
+                <div class="budget">
+                    <h3 id="h">
+                        Budget
+                    </h3>
+                    <p>
+                        Would you like to work <br> within a certain budget?
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="question">
+            <h2>
+                Select the amount of credits you want to buy
+            </h2>
+            <form id="q3Form">
+                <input name="prompt" id="prompt" type="range" required min="5" value="5" max="100" class="range-slider"> <br><br>
+                <button id="q3Btn">Complete <img src="/assets/image/arrow.svg"></button>
+                <div class="min-max">
+                    <h4 class="min">
+                        05
+                    </h4>
+                    <h4 class="max">
+                        100
+                    </h4>
+    
+                </div>
+            </form> 
+            <div class="creds-display">
+                <p>
+                    <span id ="range-value">
+                        5
+                    </span>
+                     Credits
+                </p>
+                <div class="line">
+                </div>
+                <p>
+                    $
+                    <span id="range-value-final">
+                        50
+                    </span> 
+                </p>
+                
+            </div>               
+        </div>
+    </div>
+</div>
+<!-- <h2>Q3: Budget</h2>
 
 <form id="q3Form">
     <input name="prompt" id="prompt" type="text" required placeholder="How much is your budget"> <br><br>
     <button id="q3Btn">Submit</button>
-</form>
-
+</form> -->
+<script>
+    const rangeSlider = document.querySelector(".range-slider");
+    const rangeValue = document.querySelector("#range-value");
+    const rangePrice = document.querySelector('#range-value-final');
+    rangeSlider.addEventListener("input", ()=>{
+        rangeValue.innerHTML=rangeSlider.value; 
+        rangePrice.innerHTML=rangeSlider.value*10
+    })
+</script>
 <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
 <script src="/js/1.js"></script>

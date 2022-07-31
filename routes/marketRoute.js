@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { checkUser } = require("../middleware/auth");
-const template = require("../schemas/templateSchema");
-const user = require("../schemas/userSchema");
+const template = require("../models/template");
+const user = require("../models/user");
 const axios = require("axios");
 
 router.get("/", checkUser, (req, res) => {
