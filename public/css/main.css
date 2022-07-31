@@ -213,3 +213,33 @@ h3,h2{
     margin-left: 1.5vw;
     margin-right: 1.5vw;
 }
+.selection{
+    display: flex;
+    width: 65vw;
+    height: 25vw;
+    margin-top: 5vw;
+}
+.house{
+    background: #1B1D33;
+    width: 25vw;
+    height: 25vw;
+    margin-left: 2.5vw;
+    border-radius: 10px;
+}
+.house img{
+    transform: scale(0.65);
+    margin: -5vw -5vw;
+}
+.selection input[type=radio]{
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.selection input[type=radio] + .house {
+    cursor: pointer;
+  }
+  
+.selection input[type=radio]:checked + .house{
+    background: linear-gradient(136.87deg, #4E11EC 0%, #FFFFFF 170.9%);
+}
