@@ -38,12 +38,12 @@ body{
     height : 100vh;
     color: var(--color-5);
 }
-.market-div h1{
+.market-div h1, .login-div h1, .register-div h1{
     margin: 7.5vw 6.5vw;
     color: #8684FF;
     font-size: 2.5vw;
 }
-.market-div input{
+.market-div input, .login-div input, .register-div input{
     background: #1B1D33;
     border: none;
     border-radius: 10px;
@@ -52,7 +52,18 @@ body{
     color: var(--color-5);
     font-family: 'Regular', sans-serif;
 }
-.market-div button{
+.login-div form, .register-div form{
+    margin-left: 6.5vw;
+}
+.login-div input, .register-div input{
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: .5vw;
+}
+.login-div input:focus, .register-div input:focus{
+    outline: none;
+}
+.market-div button, .login-div button, .register-div button{
     border: none;
     border-radius: 10px;
     padding: 15px;
@@ -61,6 +72,13 @@ body{
     letter-spacing: 1px;
     color: var(--color-5);
     font-family: 'Regular', sans-serif;
+}
+.login-div img, .register-div img{
+    position: absolute;
+    margin: -15vw 50%;
+}
+.login-div button, .register-div button{
+    width: 15vw;
 }
 .market-div input::placeholder{
     color: rgba(232, 213, 255, 0.4);
