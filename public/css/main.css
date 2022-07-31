@@ -495,3 +495,59 @@ h3,h2{
     margin-left: 6.5vw;
     margin-top: -2.5vw;
 }
+.profile-page{
+    padding: 10px;
+    background: #1B1D33;
+    width: 75%;
+    margin: 10vw auto;
+    border-radius: 10px;
+    height: 65vh;
+}
+.profile-page h2{
+    font-size: 2.5vw;
+    color: #8684FF;
+    margin: 6.5vw 7.5vw;
+}
+.profile-info{
+    margin: -2.5vw 7.5vw;
+}
+.profile-info h3{
+    font-size: 1.5vw;
+    color: #E8D5FF;
+    letter-spacing: 1px;
+    margin-bottom: 0.5vw;
+}
+.profile-info form{
+    margin-top: 2.5vw;
+}
+.profile-info button{
+    background: linear-gradient(136.87deg, #4E11EC 0%, #FFFFFF 170.9%);;
+    padding: 10px;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 1.2vw;
+    border: none;
+    letter-spacing: 1.2px;
+    font-family: 'Regular', sans-serif;
+    width: 15vw;
+}
+.profile-info input{
+    width: 30vw;
+    background: rgba(255, 255, 255, 0.041);
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    color: var(--color-5);
+    font-family: 'Regular', sans-serif;
+    font-size: 1.2vw;
+}
+.profile-info input:focus{
+    outline: none;
+}
+.profile-page a{
+    color: #4E11EC;
+    text-decoration: none;
+    font-size: 2vw;
+    font-family: 'Regular', sans-serif;
+    margin-left: 7.5vw;
+}

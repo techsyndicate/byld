@@ -1,14 +1,24 @@
-<h1>User Profile</h1>
-<h2>Your Profile</h2>
-<p>
-    <%= user.name %> <br>
-    <%= user.email %> <br>
-    <%= user.credits %> Credits <br>
-    <h2>Buy Credits</h2>
-    <form action="creditForm">
-        <input name="credits" id="credits" type="number" required placeholder="Credits"> <br><br>
-        <button id="creditBtn">Buy Credits</button>
-    </form>
-</p>
+<div class="profile-page">
+    <h2>Your Profile</h2>
+    <div class="profile-info">
+        <h3><span>Name : </span><%= user.name %></h3>
+        <h3><span>Email : </span><%= user.email %></h3>
+        <h3><span>Credits : </span><%= user.credits %></h3>
+        <h3><span>Name : </span><%= user.name %></h3>
+        <form action="creditForm">
+            <input name="credits" id="credits" type="number" required placeholder="Credits"> <br><br>
+            <button id="creditBtn">Buy Credits</button>
+        </form>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="links">
+        <a href="/dashboard">Dashboard <img src="/assets/image/arrow.svg"></a>
+        <a href="/logout" style="margin-left: 40vw;">Logout <img src="/assets/image/arrow.svg"></a>
+    </div>
+    
+</div>
 <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
 <script src="/js/profile.js"></script>

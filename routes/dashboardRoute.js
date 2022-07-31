@@ -25,4 +25,5 @@ router.post("/model/new", async (req, res) => {
 router.get("/dashboard/model/pref/1", checkUser, async (req, res) => {
   res.render("model/pref/1");
 });
+
 module.exports = router;
