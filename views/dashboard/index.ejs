@@ -1,6 +1,23 @@
 <div class="dashboard-div">
-    <h1>Dashboard</h1>
-
+    <div class="dash-head">
+        <h1>Welcome back, <%= user.name %></h1>
+        <div class="navbar">
+            <ul>
+                <li>
+                    <a href="#"><img src="/assets/image/home.svg"></a>
+                </li>
+                <li>
+                    <a href="#"><img src="/assets/image/market.svg"></a>
+                </li>
+                <li>
+                    <a href="#"><img src="/assets/image/doc.svg"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+   
+    <div class="project-div"></div>
+    <div class="profile-div"></div>
     <h2>Existing Models</h2>
     <% for( let i = 0; i < templates.length; i++ ) { %>
 
