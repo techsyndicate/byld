@@ -50,23 +50,111 @@ h3,h2{
 }
 .pref-1-main{
     display:flex;
+    width: 90%;
+    margin: 2.5vw auto;
 }
-.pref-1-main form textarea{
-    height: 5vw;
+
+.status{
     width: 20vw;
+}
+.question{
+    margin-left: 5vw;
+}
+
+.pref-1-main .question form textarea{
+    height: 7.5vw;
+    width: 30vw;
     background: #1B1D33;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 10px;
     color: var(--color-5);
     font-family: 'Regular', sans-serif;
 }
-.pref-1-main form textarea::placeholder{
-    color: var(--color-5);
+.pref-1-main .question form textarea::placeholder{
+    color:rgba(255,255,255,0.19);
 }
-.pref-1-main form textarea:focus{
+.pref-1-main .question form textarea:focus{
     outline: none;
 }
-.pref-1-main form{
+.pref-1-main .question form{
+    margin-top: 5vw;
+}
+.pref-1-main .question h2{
+    letter-spacing: 1.25px;
+}
+.illus{
+    background: #1B1D33;
+    width: 30vw;
+    height: 35vw;
+    margin-left: 2.5vw;
+}
+.status-line{
+    height: 30vw;
+    width: 0.5vw;
+    border-radius: 5px;
+    background: linear-gradient(180deg, #4E11EC 0%, rgba(232, 213, 255, 0.4) 100%);
     margin-top: 2vw;
+    margin-left: 1.5vw;
+}
+.status-circle-1,
+.status-circle-2,
+.status-circle-3{
+    position: absolute;
+    width: 1vw;
+    height: 1vw;
+    border-radius: 100%;
+    left: 6.275vw;
+}
+.status-circle-1{
+    top: 16vw;
+    background-color: #4E11EC;
+}
+.status-circle-2{
+    top: 31vw;
+    background-color: #5d3c85;
+}
+.status-circle-3{
+    background: #726989;
+    top: 46vw
+}
+.status-col{
+    position: absolute;
+    top: 16vw;
+    left: 10vw;
+    color: #696C89;;
+    height: 30vw;
+}
+.status-col p{
+    padding-top: 0.5vw;
+}
+.status-col h3{
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.5);
+}
+.status-col .desc h3{
+    font-family: 'Bold', sans-serif;
+}
+.status-col .prefer{
+    top: 14vw;
+    position: absolute;
+    width: 25vw;
+}
+.status-col .desc h3{
+    color: #E8D5FF;
+}
+.status-col .budget{
+    top: 29vw;
+    position: absolute;
+    width: 25vw;
+}
+#q1Btn{
+    position: absolute;
+    background: transparent;
+    color: var(--color-3);
+    border: none;
+    outline: none;
+    left: 87.5%;
+    top: 55vw;
+    font-size: 1.75vw;
 }
